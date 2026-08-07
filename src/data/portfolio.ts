@@ -16,8 +16,8 @@ export const personalInfo = {
   linkedinLabel: "dharanidharan-s-386740224",
   github: "https://github.com/dharan-dharani",
   githubLabel: "dharan-dharani",
-  resumeFile: "assets/resume.pdf",
-  photo: "assets/profile.jpg",
+  resumeFile: "resume.pdf",
+  photo: "profile.jpg",
 };
 
 export const about = {
