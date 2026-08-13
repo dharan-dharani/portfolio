@@ -95,22 +95,6 @@ Edit the values there and the site updates automatically.
 
 This is a static site — build it once with `npm run build`, then deploy the resulting `dist/` folder to any static host.
 
-### Vercel
-
-```bash
-npm install -g vercel
-vercel
-```
-Or connect the GitHub repo at [vercel.com](https://vercel.com) — Vercel auto-detects the Vite build settings (`npm run build`, output directory `dist`).
-
-### Netlify
-
-```bash
-npm install -g netlify-cli
-npm run build
-netlify deploy --prod --dir=dist
-```
-Or drag-and-drop the `dist/` folder at [app.netlify.com/drop](https://app.netlify.com/drop).
 
 ### GitHub Pages
 
@@ -126,17 +110,6 @@ Or drag-and-drop the `dist/` folder at [app.netlify.com/drop](https://app.netlif
 3. In `vite.config.ts`, set `base: '/<repo-name>/'` inside `defineConfig({...})`.
 4. Run `npm run deploy`.
 
-### Firebase Hosting
-
-```bash
-npm install -g firebase-tools
-firebase login
-firebase init hosting   # choose "dist" as the public directory, configure as a single-page app: No
-npm run build
-firebase deploy
-```
-
----
 
 ## Notes
 

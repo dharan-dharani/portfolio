@@ -8,7 +8,7 @@ export const personalInfo = {
   name: "Dharanidharan S",
   title: "Flutter Developer",
   tagline:
-    "Flutter Developer with 1.7+ years of experience building scalable, real-time cross-platform mobile applications.",
+    "Flutter Developer with 2+ years of experience building scalable, real-time cross-platform mobile applications.",
   location: "Madurai, Tamil Nadu, India",
   email: "sdharandharani@gmail.com",
   phone: "+91 93441 76105",
@@ -23,7 +23,7 @@ export const personalInfo = {
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I'm a Flutter Developer with 1.7 years of hands-on experience designing and maintaining cross-platform mobile applications using Flutter and Dart. My work centers on building scalable, real-time service applications — including food delivery, grocery, taxi booking, and parcel management systems.",
+    "I'm a Flutter Developer with 2+ years of hands-on experience designing and maintaining cross-platform mobile applications using Flutter and Dart. My work centers on building scalable, real-time service applications — including food delivery, grocery, taxi booking, and parcel management systems.",
     "I build on Clean Architecture, MVVM, and MVC patterns with Dependency Injection, and I'm comfortable owning a feature end-to-end: Firebase Authentication, Analytics, Storage and Cloud Messaging, REST API integration, Razorpay payment gateway, Google Maps integration, and state management with GetX and Provider.",
     "I care about writing clean, reusable, performance-optimized code and collaborating effectively within SDLC-driven teams. I'm currently looking for Flutter/mobile development opportunities where I can contribute to production-grade, real-time applications.",
   ],
@@ -137,13 +137,13 @@ export const experience: ExperienceItem[] = [
     technologies: ["Flutter", "React.js", "Dart", "JavaScript", "OOPs"],
   },
   {
-    role: "Flutter Developer Intern",
+    role: "Flutter Developer",
     company: "Mindvision Technologies",
     duration: "Jul 2024 – Dec 2024",
-    points: [
-      "Built responsive Flutter UI components and integrated REST APIs for real-time web and mobile applications during internship training.",
-      "Collaborated with the development team to improve application functionality and user experience.",
-    ],
+points: [
+  "Developed responsive Flutter UI components and integrated REST APIs for web and mobile applications.",
+  "Collaborated with the development team to enhance application functionality, performance, and user experience.",
+],
     technologies: ["Flutter", "REST API"],
   },
 ];
