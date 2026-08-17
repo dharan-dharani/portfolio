@@ -21,8 +21,12 @@ export default function Experience() {
   const ref = useReveal<HTMLDivElement>();
 
   return (
-    <section id="experience" className="py-20 md:py-28">
-      <div className="container-page">
+    <section id="experience" className="relative py-20 md:py-28 overflow-hidden">
+      <div
+        className="section-glow -left-64 top-1/3 -translate-y-1/2 opacity-30"
+        aria-hidden="true"
+      />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Experience"
           title="Professional Experience"
@@ -37,9 +41,14 @@ export default function Experience() {
           viewport={{ once: true, margin: "-60px" }}
           className="relative"
         >
-          <div
+          <motion.div
             className="absolute left-[7px] top-2 bottom-2 hidden w-px bg-[var(--color-border)] sm:block"
             aria-hidden="true"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            style={{ transformOrigin: "top" }}
           />
 
           <ol className="space-y-10">
@@ -50,11 +59,20 @@ export default function Experience() {
                 className="relative sm:pl-10"
               >
                 <span
-                  className="absolute left-0 top-1.5 hidden h-3.5 w-3.5 rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-bg)] sm:block"
+                  className="absolute left-0 top-1.5 hidden h-3.5 w-3.5 sm:block"
                   aria-hidden="true"
-                />
+                >
+                  {job.current ? (
+                    <span className="relative flex h-full w-full items-center justify-center">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-accent)] opacity-60" />
+                      <span className="relative inline-flex h-3.5 w-3.5 rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-bg)]" />
+                    </span>
+                  ) : (
+                    <span className="inline-flex h-3.5 w-3.5 rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-bg)]" />
+                  )}
+                </span>
 
-                <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-ink-faint)]">
+                <div className="group relative rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-300 hover:border-[var(--color-ink-faint)] hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.06)]">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
                       <h3 className="text-base font-bold text-[var(--color-ink)] sm:text-lg">

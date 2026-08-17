@@ -23,9 +23,13 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="border-t border-[var(--color-border)] bg-[var(--color-surface)] py-20 md:py-28"
+      className="relative border-t border-[var(--color-border)] bg-[var(--color-surface)] py-20 md:py-28 overflow-hidden"
     >
-      <div className="container-page">
+      <div
+        className="section-glow -right-64 top-1/2 -translate-y-1/2 opacity-30"
+        aria-hidden="true"
+      />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Skills"
           title="Technical Skills"
@@ -44,7 +48,7 @@ export default function Skills() {
             <motion.div
               key={group.category}
               variants={item}
-              className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-5 transition-colors hover:border-[var(--color-ink-faint)]"
+              className="group relative rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-ink-faint)] hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.08)]"
             >
               <h3 className="text-sm font-semibold text-[var(--color-ink)]">
                 {group.category}
@@ -53,9 +57,13 @@ export default function Skills() {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-medium text-[var(--color-ink-soft)]"
+                    className="group/item inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-1.5 text-xs font-medium text-[var(--color-ink-soft)] transition-all duration-200 hover:border-[var(--color-ink-faint)] hover:text-[var(--color-accent)] hover:shadow-[0_0_12px_-4px_rgba(255,255,255,0.08)]"
                   >
-                    <SkillIcon name={skill} size={14} />
+                    <SkillIcon
+                      name={skill}
+                      size={14}
+                      className="transition-transform duration-200 group-hover/item:scale-110"
+                    />
                     {skill}
                   </span>
                 ))}

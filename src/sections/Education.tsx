@@ -37,9 +37,9 @@ export default function Education() {
             <motion.div
               key={edu.institution}
               variants={item}
-              className="flex gap-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-ink-faint)]"
+              className="group flex gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-300 hover:border-[var(--color-ink-faint)] hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.06)]"
             >
-              <div className="flex h-10 w-10 flex-none items-center justify-center rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+              <div className="flex h-10 w-10 flex-none items-center justify-center rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)] transition-colors group-hover:bg-[var(--color-accent)] group-hover:text-[var(--color-bg)]">
                 <GraduationCap size={20} aria-hidden="true" />
               </div>
               <div>

@@ -20,20 +20,20 @@ const item = {
 };
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
-  const magneticRef = useMagnetic(0.15);
+  const magneticRef = useMagnetic(0.12);
 
   return (
     <motion.article
       ref={magneticRef}
       variants={item}
-      className="magnetic-btn flex flex-col rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-6 transition-all hover:border-[var(--color-ink-faint)] hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.08)]"
+      className="magnetic-btn group flex flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 transition-all duration-300 hover:border-[var(--color-ink-faint)] hover:shadow-[0_0_40px_-12px_rgba(255,255,255,0.1)]"
     >
       <div className="flex items-start justify-between gap-4">
         <div>
           <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-faint)]">
             {project.type}
           </span>
-          <h3 className="mt-1 text-lg font-bold text-[var(--color-ink)]">
+          <h3 className="mt-1 text-lg font-bold text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-accent)]">
             {project.name}
           </h3>
         </div>
@@ -43,9 +43,9 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${project.name}`}
-            className="flex h-8 w-8 flex-none items-center justify-center rounded-md border border-[var(--color-border)] text-[var(--color-ink-soft)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+            className="flex h-8 w-8 flex-none items-center justify-center rounded-md border border-[var(--color-border)] text-[var(--color-ink-soft)] transition-all duration-200 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:shadow-[0_0_12px_-4px_rgba(255,255,255,0.15)]"
           >
-            <ArrowUpRight size={14} aria-hidden="true" />
+            <ArrowUpRight size={14} aria-hidden="true" className="transition-transform duration-200 group-hover:scale-110" />
           </a>
         )}
       </div>
@@ -87,10 +87,10 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent)] transition-colors hover:underline"
+              className="group/link inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent)] transition-colors hover:underline"
             >
               {link.label}
-              <ExternalLink size={12} aria-hidden="true" />
+              <ExternalLink size={12} aria-hidden="true" className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
             </a>
           ))}
         </div>
@@ -105,12 +105,16 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="border-t border-[var(--color-border)] bg-[var(--color-surface)] py-20 md:py-28"
+      className="relative border-t border-[var(--color-border)] bg-[var(--color-surface)] py-20 md:py-28 overflow-hidden"
     >
-      <div className="container-page">
+      <div
+        className="section-glow -right-64 top-1/4 -translate-y-1/2 opacity-30"
+        aria-hidden="true"
+      />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Projects"
-          title="Professional Work"
+          title="Projects I've Worked On"
           description="Real-world applications built end-to-end, from architecture to deployment."
         />
 

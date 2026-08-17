@@ -20,8 +20,12 @@ export default function About() {
   const ref = useReveal<HTMLDivElement>();
 
   return (
-    <section id="about" className="py-20 md:py-28">
-      <div className="container-page">
+    <section id="about" className="relative py-20 md:py-28 overflow-hidden">
+      <div
+        className="section-glow -left-64 top-1/2 -translate-y-1/2 opacity-40"
+        aria-hidden="true"
+      />
+      <div className="container-page relative">
         <SectionHeading eyebrow="About" title={about.heading} />
         <motion.div
           ref={ref}
@@ -35,7 +39,7 @@ export default function About() {
             <motion.p
               key={i}
               variants={item}
-              className="text-[15px] leading-relaxed text-[var(--color-ink-soft)] sm:text-base"
+              className="text-[15px] leading-[1.75] text-[var(--color-ink-soft)] sm:text-base"
             >
               {p}
             </motion.p>

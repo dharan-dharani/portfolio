@@ -58,13 +58,17 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="border-t border-[var(--color-border)] bg-[var(--color-surface)] py-20 md:py-28"
+      className="relative border-t border-[var(--color-border)] bg-[var(--color-surface)] py-20 md:py-28 overflow-hidden"
     >
-      <div className="container-page">
+      <div
+        className="section-glow -left-64 top-1/3 -translate-y-1/2 opacity-30"
+        aria-hidden="true"
+      />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Contact"
-          title="Get In Touch"
-          description="Open to Flutter and mobile development opportunities. Feel free to reach out directly."
+          title="Let's Build Something Great"
+          description="Have a project in mind or looking for a Flutter developer? Let's connect."
         />
 
         <motion.div
@@ -78,8 +82,8 @@ export default function Contact() {
           {contactItems.map((contact) => {
             const Icon = contact.icon;
             const content = (
-              <div className="flex items-center gap-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-5 transition-all hover:border-[var(--color-ink-faint)]">
-                <div className="flex h-10 w-10 flex-none items-center justify-center rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+              <div className="group flex items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 transition-all duration-300 hover:border-[var(--color-ink-faint)] hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.06)]">
+                <div className="flex h-10 w-10 flex-none items-center justify-center rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)] transition-colors group-hover:bg-[var(--color-accent)] group-hover:text-[var(--color-bg)]">
                   <Icon size={18} aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
@@ -118,7 +122,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-8 inline-flex items-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-[var(--color-bg)] transition-colors hover:bg-[var(--color-accent-dark)] hover:text-[var(--color-bg)]"
+          className="mt-10 inline-flex items-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-[var(--color-bg)] shadow-[0_0_20px_-5px_rgba(255,255,255,0.15)] transition-all hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.25)] hover:bg-[var(--color-accent-dark)] active:scale-95"
         >
           <Download size={16} aria-hidden="true" />
           Download Resume
