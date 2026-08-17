@@ -23,72 +23,46 @@ export const personalInfo = {
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I'm a Flutter Developer with 2+ years of hands-on experience designing and maintaining cross-platform mobile applications using Flutter and Dart. My work centers on building scalable, real-time service applications — including food delivery, grocery, taxi booking, and parcel management systems.",
-    "I build on Clean Architecture, MVVM, and MVC patterns with Dependency Injection, and I'm comfortable owning a feature end-to-end: Firebase Authentication, Analytics, Storage and Cloud Messaging, REST API integration, Razorpay payment gateway, Google Maps integration, and state management with GetX and Provider.",
-    "I care about writing clean, reusable, performance-optimized code and collaborating effectively within SDLC-driven teams. I'm currently looking for Flutter/mobile development opportunities where I can contribute to production-grade, real-time applications.",
+    "I'm Dharanidharan S, a Flutter Developer with 2+ years of experience building cross-platform mobile apps using Flutter and Dart. I specialize in scalable, real-time service applications — food delivery, grocery, taxi booking, and parcel delivery.",
+    "My technical toolkit includes MVVM, Clean Architecture, MVC, Dependency Injection, Firebase (Auth, Analytics, Storage, FCM), REST APIs, Razorpay integration, and Google Maps. I'm proficient in GetX and Provider, and familiar with Bloc.",
+    "I care about clean architecture, reusable components, and performance-optimized code. I have hands-on experience with Play Store and App Store deployment, and I'm comfortable collaborating in SDLC-driven teams.",
   ],
 };
 
 export type SkillGroup = {
   category: string;
   skills: string[];
+  icon?: string;
 };
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Programming Languages",
-    skills: ["Dart", "JavaScript"],
+    category: "Languages",
+    skills: ["Dart"],
   },
   {
-    category: "Frameworks & Technologies",
-    skills: ["Flutter", "Firebase", "REST API Integration"],
+    category: "Frameworks",
+    skills: ["Flutter", "Firebase", "REST API"],
   },
   {
-    category: "Architecture & Design Patterns",
-    skills: [
-      "MVVM",
-      "Clean Architecture",
-      "MVC",
-      "Dependency Injection",
-      "OOPs Concepts",
-      "Singleton",
-      "Lazy Initialization",
-    ],
+    category: "Architecture",
+    skills: ["MVVM", "MVC", "Clean Architecture", "Dependency Injection", "OOPs"],
   },
   {
     category: "State Management",
-    skills: ["GetX", "Provider"],
+    skills: ["GetX", "Provider", "Bloc (familiar)"],
   },
   {
-    category: "Firebase Services",
-    skills: [
-      "Authentication",
-      "Firebase Analytics",
-      "Firebase Storage",
-      "Firebase Cloud Messaging (FCM)",
-      "Firebase Hosting",
-    ],
+    category: "Firebase",
+    skills: ["Authentication", "Analytics", "Storage", "FCM", "Hosting"],
   },
   {
     category: "Integrations",
-    skills: ["Razorpay Payment Gateway", "Google Maps Integration"],
+    skills: ["Razorpay", "Google Maps SDK"],
   },
   {
-    category: "Tools & Platforms",
-    skills: ["GitHub", "VS Code", "Android Studio", "Flutter DevTools"],
-  },
-  {
-    category: "Core Skills",
-    skills: [
-      "SDLC",
-      "Responsive UI Development",
-      "Flutter Animations",
-      "Reusable Component Development",
-      "Flutter Unit Testing",
-      "Manual Testing",
-      "App Performance Optimization",
-      "Play Store & App Store Deployment",
-    ],
+    category: "Tools",
+    skills: ["GitHub", "VS Code", "Android Studio", "Flutter DevTools", "Jenkins (basics)", "GitHub Actions (basics)"],
   },
 ];
 
@@ -105,25 +79,22 @@ export const experience: ExperienceItem[] = [
   {
     role: "Flutter Developer",
     company: "Feb40",
-    duration: "Nov 2025 – Present",
+    duration: "Feb 2025 – Present",
     current: true,
     points: [
-      "Contributed to end-to-end development of a multi-service Flutter application integrating Food Delivery, Grocery, Taxi Booking, and Parcel Management, following MVVM and Clean Architecture principles with Dependency Injection for scalability and maintainability.",
-      "Implemented Firebase Authentication and Firebase Cloud Messaging (FCM) for real-time data handling and notifications; integrated Firebase Analytics and Firebase Storage for tracking and media management, while optimizing data queries to improve app performance.",
-      "Integrated Razorpay payment gateway for secure in-app transactions and Google Maps for real-time location tracking across taxi and delivery workflows.",
-      "Developed responsive, reusable UI components with Flutter animations, wrote unit tests for reliability, used Flutter DevTools for performance profiling, and managed deployment on the Google Play Store and App Store.",
+      "Built multi-service app: Food Delivery, Grocery, Taxi Booking, Parcel Delivery — MVVM + DI architecture.",
+      "Firebase Authentication & FCM for real-time notifications.",
+      "Razorpay payment integration and Google Maps SDK for live tracking.",
+      "Built reusable animated UI components, performance profiling with DevTools, Play Store/App Store releases.",
     ],
     technologies: [
       "Flutter",
       "Dart",
-      "Firebase Auth",
-      "FCM",
-      "Firebase Analytics",
-      "Firebase Storage",
+      "Firebase",
       "Razorpay",
       "Google Maps",
       "MVVM",
-      "Clean Architecture",
+      "GetX",
     ],
   },
   {
@@ -131,22 +102,26 @@ export const experience: ExperienceItem[] = [
     company: "Success Life Mantra",
     duration: "Jan 2025 – Oct 2025",
     points: [
-      "Developed frontend modules for a Social Media Marketing Tool using Flutter and React.js with CRM functionality, broadcast messaging, and subscription-based workflows, following SDLC processes across planning, development, and testing.",
-      "Implemented dynamic UI flows, user role-based access, and scalable, reusable feature modules using OOPs principles to improve usability, maintainability, and app performance.",
+      "Developed frontend modules for Social Media Marketing Tool (Flutter + React.js) with CRM, broadcast messaging, subscriptions.",
+      "Implemented role-based access and reusable scalable modules.",
     ],
-    technologies: ["Flutter", "React.js", "Dart", "JavaScript", "OOPs"],
+    technologies: ["Flutter", "React.js", "Dart", "CRM"],
   },
   {
     role: "Flutter Developer",
     company: "Mindvision Technologies",
     duration: "Jul 2024 – Dec 2024",
-points: [
-  "Developed responsive Flutter UI components and integrated REST APIs for web and mobile applications.",
-  "Collaborated with the development team to enhance application functionality, performance, and user experience.",
-],
+    points: [
+      "Built responsive Flutter UI, integrated REST APIs for web/mobile.",
+    ],
     technologies: ["Flutter", "REST API"],
   },
 ];
+
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
 
 export type Project = {
   name: string;
@@ -155,54 +130,90 @@ export type Project = {
   role: string;
   contributions: string[];
   technologies: string[];
-  link?: string;
+  links: ProjectLink[];
+  badges: string[];
 };
 
 export const projects: Project[] = [
   {
-    name: "Photography Studio Event Management Application",
-    type: "Freelance Project",
+    name: "Feb40",
+    type: "Multi-service App",
     description:
-      "A Flutter-based application for managing customer bookings, event details, photo selections, and delivery workflows for a photography studio.",
+      "Multi-service app integrating Food Delivery, Grocery, Taxi Booking, and Parcel Delivery — built with MVVM + Dependency Injection.",
     role: "Flutter Developer",
     contributions: [
-      "Built separate Admin and User modules with responsive UI, Firebase integration, and reusable widgets for real-time data management.",
-      "Implemented authentication, booking management, and event status tracking using MVVM architecture.",
-      "Optimized data handling, improving overall app performance.",
+      "End-to-end development of multi-service Flutter application with Firebase Auth, FCM, Razorpay, and Google Maps.",
+      "Reusable animated UI components, DevTools performance profiling, and Play Store / App Store releases.",
     ],
-    technologies: ["Flutter", "Dart", "Firebase", "MVVM"],
+    technologies: ["Flutter", "Dart", "Firebase", "GetX", "Razorpay", "Google Maps"],
+    links: [
+      { label: "User App", href: "https://play.google.com/store/apps/details?id=com.feb40.app&pcampaignid=web_share" },
+      { label: "Service App", href: "https://play.google.com/store/apps/details?id=com.feb40_service.app" },
+    ],
+    badges: ["Flutter", "Firebase", "GetX", "Play Store", "Live"],
   },
   {
-    name: "Multi-Service Mobile Application",
-    type: "Taxi, Parcel, Restaurants & Grocery Service",
+    name: "Nagai51",
+    type: "Flavor Concept App",
     description:
-      "A single Flutter APK integrating Restaurant Ordering, Grocery/Store Delivery, Parcel Delivery, and Taxi Booking, built on Provider-based state management with Dependency Injection.",
+      "Flutter app demonstrating white-label / flavor architecture for multi-brand deployments.",
     role: "Flutter Developer",
     contributions: [
-      "Integrated Firebase Authentication and Firestore for users, vendors, drivers, orders, and ride management, with query optimization that boosted app performance.",
-      "Integrated Razorpay for in-app payments and Google Maps for live tracking of taxi rides and deliveries.",
-      "Ensured smooth UI performance and responsive layouts, added Flutter animations, and conducted unit and manual testing to maintain application stability.",
+      "Implemented flavor-based architecture for scalable multi-brand app deployments.",
+      "Clean separation of codebase and configurations across flavors.",
     ],
-    technologies: [
-      "Flutter",
-      "Provider",
-      "Dependency Injection",
-      "Firebase Auth",
-      "Firestore",
-      "Razorpay",
-      "Google Maps",
+    technologies: ["Flutter", "Dart", "Firebase"],
+    links: [
+      { label: "Play Store", href: "https://play.google.com/store/apps/details?id=com.nagai51.user" },
     ],
+    badges: ["Flutter", "Firebase", "Play Store", "Live"],
   },
   {
-    name: "Social Media Marketing Tool",
-    type: "Product",
+    name: "NXSupplyHub",
+    type: "Hosted Web Project",
     description:
-      "A marketing tool built with React.js, Flutter, and Dart featuring CRM (Customer Relationship Management), keyword-based flows, broadcast messaging, and plan-based restrictions.",
+      "Hosted web project built with modern web technologies for supply chain management.",
+    role: "Developer",
+    contributions: [
+      "Built responsive web interfaces and deployed to production hosting.",
+      "Implemented scalable architecture for supply chain operations.",
+    ],
+    technologies: ["Web", "Hosting"],
+    links: [
+      { label: "Live Site", href: "https://nxsupplyhub.com/" },
+    ],
+    badges: ["Web", "Hosted", "Live"],
+  },
+  {
+    name: "Success Life Mantra",
+    type: "CRM & Social Media Marketing Tool",
+    description:
+      "Marketing tool with CRM, broadcast messaging, subscriptions, and keyword-based flows.",
     role: "Frontend Developer",
     contributions: [
-      "Implemented dynamic UI restrictions, campaign management, and reusable, role-based access components for scalable marketing operations.",
+      "Developed CRM modules, broadcast messaging, and subscription workflows.",
+      "Implemented role-based access and reusable scalable modules.",
     ],
-    technologies: ["React.js", "Flutter", "Dart", "CRM"],
+    technologies: ["Flutter", "React.js", "Dart", "CRM"],
+    links: [
+      { label: "Live Site", href: "https://inderact.masfob.com/" },
+    ],
+    badges: ["Flutter", "React.js", "CRM", "Live"],
+  },
+  {
+    name: "Photography Studio App",
+    type: "Freelance Project",
+    description:
+      "Flutter MVVM app with Admin & User modules, Firebase integration, booking management, and event status tracking.",
+    role: "Flutter Developer",
+    contributions: [
+      "Built Admin and User modules with responsive UI and Firebase integration.",
+      "Implemented authentication, booking management, and event status tracking using MVVM.",
+      "Optimized data handling for improved app performance.",
+    ],
+    technologies: ["Flutter", "Dart", "Firebase", "MVVM"],
+    links: [],
+    badges: ["Flutter", "Firebase", "MVVM", "Freelance"],
   },
 ];
 
@@ -216,15 +227,15 @@ export type EducationItem = {
 export const education: EducationItem[] = [
   {
     institution: "Sethu Institute of Technology",
-    degree: "B.E. in Electronics and Communication Engineering",
+    degree: "B.E in Electronics and Communication Engineering",
     duration: "Sept 2020 – Mar 2024",
-    detail: "CGPA: 8.6 / 10.0",
+    detail: "CGPA: 8.6 / 10",
   },
   {
     institution: "V.H.N Boys Higher Secondary School",
     degree: "Higher Secondary Certificate, Computer Science",
     duration: "Jun 2018 – Mar 2020",
-    detail: "Percentage: 68 / 100",
+    detail: "Percentage: 68%",
   },
 ];
 

@@ -1,7 +1,21 @@
+import { motion } from "framer-motion";
 import { useReveal } from "../hooks/useReveal";
 import SectionHeading from "../components/SectionHeading";
 import Badge from "../components/Badge";
 import { experience } from "../data/portfolio";
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+};
 
 export default function Experience() {
   const ref = useReveal<HTMLDivElement>();
@@ -15,7 +29,14 @@ export default function Experience() {
           description="A track record of shipping real-time, cross-platform Flutter applications across delivery, mobility, and marketing-tech products."
         />
 
-        <div ref={ref} className="reveal relative">
+        <motion.div
+          ref={ref}
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="relative"
+        >
           <div
             className="absolute left-[7px] top-2 bottom-2 hidden w-px bg-[var(--color-border)] sm:block"
             aria-hidden="true"
@@ -23,13 +44,17 @@ export default function Experience() {
 
           <ol className="space-y-10">
             {experience.map((job) => (
-              <li key={`${job.role}-${job.company}`} className="relative sm:pl-10">
+              <motion.li
+                key={`${job.role}-${job.company}`}
+                variants={item}
+                className="relative sm:pl-10"
+              >
                 <span
                   className="absolute left-0 top-1.5 hidden h-3.5 w-3.5 rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-bg)] sm:block"
                   aria-hidden="true"
                 />
 
-                <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+                <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-ink-faint)]">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
                       <h3 className="text-base font-bold text-[var(--color-ink)] sm:text-lg">
@@ -67,10 +92,10 @@ export default function Experience() {
                     ))}
                   </div>
                 </div>
-              </li>
+              </motion.li>
             ))}
           </ol>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

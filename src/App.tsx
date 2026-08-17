@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
@@ -10,7 +11,12 @@ import Contact from "./sections/Contact";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-ink)]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-[var(--color-bg)] text-[var(--color-ink)]"
+    >
       <Navbar />
       <main>
         <Hero />
@@ -22,7 +28,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 
