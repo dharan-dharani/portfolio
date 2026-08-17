@@ -110,7 +110,7 @@ export default function Projects() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Projects"
-          title="Selected Projects"
+          title="Professional Work"
           description="Real-world applications built end-to-end, from architecture to deployment."
         />
 
