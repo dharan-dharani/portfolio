@@ -4,7 +4,7 @@ import {
 } from "react-icons/di";
 import { FaGitAlt, FaCode } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io5";
-import { SiRazorpay, SiGooglemaps, SiFlutter } from "react-icons/si";
+import { SiFlutter, SiRazorpay, SiGooglemaps } from "react-icons/si";
 import type { IconType } from "react-icons";
 
 type IconProps = {
